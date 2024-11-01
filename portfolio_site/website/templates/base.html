@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+     {% block title %} <title></title> {% endblock title %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Leven - Resume / CV / vCard Template">
+    <meta name="keywords" content="vcard, resposnive, retina, resume, jquery, css3, bootstrap, portfolio">
+    <meta name="author" content="lmpixels">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="/static/assets/css/normalize.css" type="text/css">
+    <link rel="stylesheet" href="/static/assets/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/static/assets/css/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="/static/assets/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="/static/assets/css/main.css" type="text/css">
+
+    <script src="/static/assets/js/modernizr.custom.js"></script>
+  </head>
+
+  <body class="page">
+
+    <div class="lm-animated-bg"></div>
+    
+    <!-- Loading animation -->
+    <div class="preloader">
+      <div class="preloader-animation">
+        <div class="preloader-spinner">
+        </div>
+      </div>
+    </div>
+    <!-- /Loading animation -->
+
+    <!-- Scroll To Top Button -->
+    <div class="lmpixels-scroll-to-top"><i class="lnr lnr-chevron-up"></i></div>
+    <!-- /Scroll To Top Button -->
+
+    <div class="page-scroll">
+      <div id="page_container" class="page-container bg-move-effect" data-animation="transition-flip-in-right">
+
+        <!-- Header -->
+        <header id="site_header" class="header">
+          <div class="header-content clearfix">
+                
+            <!-- Text Logo -->
+            <div class="text-logo">
+              <a href="index.html">
+                <div class="logo-symbol">J</div>
+                <div class="logo-text">Jesses C. <span>Ukaegbu</span></div>
+              </a>
+            </div>
+            <!-- /Text Logo -->
+
+            <!-- Navigation -->
+            <div class="site-nav mobile-menu-hide">
+              <ul class="leven-classic-menu site-main-menu">
+                <li class="menu-item current-menu-item">
+                  <a href="{% url 'index' %}">About Me</a>
+                </li>
+
+                <li class="menu-item">
+                  <a href="{% url 'resume' %}">Resume</a>
+                </li>
+
+                <li class="menu-item">
+                  <a href="{% url 'portfolio' %}">Portfolio</a>
+                </li>
+                
+                <li class="menu-item">
+                  <a href="{% url 'blog' %}">Blog</a>
+                </li>
+
+                <li class="menu-item">
+                  <a href="{% url 'contact' %}">Contact</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <a class="menu-toggle mobile-visible">
+              <i class="fa fa-bars"></i>
+            </a>
+            <!-- Mobile Menu Toggle -->
+          </div>
+        </header>
+        <!-- /Header -->
+
+        {% block content %} 
+        
+        {% endblock %}
+
+        <!-- Footer -->
+        <footer class="site-footer clearfix">
+            <div class="footer-social">
+              <ul class="footer-social-links">
+                <li>
+                  <a href="https://www.linkedin.com/in/jesses-c-ukaegbu-98b1bb198" target="_blank">Linkedin</a>
+                </li>
+                <li>
+                  <a href="https://x.com/JessesUkaegbu" target="_blank">Twitter</a>
+                </li>
+  
+                <li>
+                  <a href="https://www.facebook.com/profile.php?id=100067658262566" target="_blank">Facebook</a>
+                </li>
+  
+                <li>
+                  <a href="https://www.instagram.com/jessescemac/" target="_blank">Instagram</a>
+                </li>
+              </ul>
+            </div>
+                
+            <div class="footer-copyrights">
+              <p>© 2024 All rights reserved. JessCoperation.</p>
+            </div>
+          </footer>
+          <!-- /Footer -->
+          
+        </div>
+      </div>
+      <script src="/static/assets/js/jquery-2.1.3.min.js"></script>
+      <script src="/static/assets/js/imagesloaded.pkgd.min.js"></script>
+      <script src='/static/assets/../../../recaptcha/api.js'></script>
+      <script src="/static/assets/js/bootstrap.min.js"></script>
+      <script src='/static/assets/js/jquery.shuffle.min.js'></script>
+      <script src='/static/assets/js/masonry.pkgd.min.js'></script>
+      <script src='/static/assets/js/owl.carousel.min.js'></script>
+      <script src="/static/assets/js/jquery.magnific-popup.min.js"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrDf32aQTCVENBhFJbMBKOUTiUAABtC2o"></script>
+      <script src="/static/assets/js/jquery.googlemap.js"></script>
+      <script src="/static/assets/js/validator.js"></script>
+      <script src="/static/assets/js/main.js"></script>
+    </body>
+  </html>
