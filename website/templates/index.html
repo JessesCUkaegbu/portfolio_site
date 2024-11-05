@@ -22,26 +22,27 @@
                   </div>
 
                   <div class="col-sm-12 col-md-7 col-lg-7">
+                    {% for item in aboutMe %}
                     <div class="home-text hp-left">
                       <div class="owl-carousel text-rotation">                                    
                         <div class="item">
-                          <h4>Backend-developer</h4>
+                          <h4>{{ item.skill_1 }}</h4>
                         </div>
 
                         <div class="item">
-                          <h4>Web Designer</h4>
+                          <h4>{{ item.skill_2 }}</h4>
                         </div>
                       </div>
                         
-                      <h1>Jesses C. Ukaegbu</h1>
-                      <p>
-                        Motivated and results-driven software developer with expertise in Python and Django, I am passionate about building efficient, scalable web applications and solving complex problems. With a solid background in backend development, database management, API integration, and frontend collaboration, I thrive in dynamic environments that encourage innovation and teamwork.</p>
+                      <h1>{{ item.name }}</h1>
+                      <p>{{ item.bio }}</p>
                            
                       <div class="home-buttons">
-                        <a href="#" target="_blank" class="btn btn-primary">Download CV</a>
-                        <a href="#" target="_self" class="btn btn-secondary">Contact</a>
+                        <a href="/static/asssets/cv/resume.pdf" target="" class="btn btn-primary" download>Download CV</a>
+                        <a href="{% url 'contact' %}" target="_self" class="btn btn-secondary">Contact</a>
                       </div>
                     </div>
+                    {% endfor %}
                   </div>
                 </div>
               </div>

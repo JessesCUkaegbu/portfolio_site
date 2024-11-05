@@ -7,7 +7,7 @@ def index(request):
     context = {
         'aboutMe':aboutMe
     }
-    return render(request, 'index.html')
+    return render(request, 'index.html', context)
 
 def resume(request):
     experience = Experience.objects.all()
