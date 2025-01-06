@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 import environ
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -82,28 +83,20 @@ WSGI_APPLICATION = 'portfolio_site.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-if IS_PRODUCTION:
-       DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': env('RAILWAY_DB_NAME'),
-            'USER': env('RAILWAY_DB_USER'),
-            'PASSWORD': env('RAILWAY_DB_PASSWORD'),
-            'HOST': env('RAILWAY_DB_HOST'),
-            'PORT': env('RAILWAY_DB_PORT'),
-        }
-    }
-else:
-     DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': env('DB_NAME'),
-            'USER': env('DB_USER'),
-            'PASSWORD': env('DB_PASSWORD'),
-            'HOST': env('DB_HOST'),
-            'PORT': env('DB_PORT'),
-        }
-    }
+DATABASES = {
+    'default': dj_database_url.config(default=env('DATABASE_URL'))
+}
+
+# DATABASES = {
+#     'default': {
+#         'default': dj_database_url.config(env('DATABASE_URL')),
+#         'NAME': env('DB_NAME'),
+#         'USER': env('DB_USER'),
+#         'PASSWORD': env('DB_PASSWORD'),
+#         'HOST': env('DB_HOST'),
+#         'PORT': env('DB_PORT'),
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
